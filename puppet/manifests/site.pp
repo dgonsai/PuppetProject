@@ -1,18 +1,12 @@
 node 'Master.netbuilder.private'{
     include java
 	include mvn
-	install git
-	install jira
+	include git
+	include jira
 	include jenkins
     include nexus
-
+    include zabbix_server
 }
 node 'Agent.netbuilder.private'{
-    include java
-	include mvn
-	install git
-	install jira
-	include jenkins
-    include nexus
-
+    include zabbix_client
 }
