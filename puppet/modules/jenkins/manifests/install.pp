@@ -35,7 +35,7 @@ class jenkins::install{
 		logoutput => on_failure
 	}	
 	
-	exec{'get updates':
+	exec{'stop jenkins':
 	    cwd => '/opt',
 		require => Exec['install jenkins'],
 		command => 'sudo service jenkins stop'
@@ -43,7 +43,7 @@ class jenkins::install{
 	
 	exec{'change port':
 	    cwd => '/opt',
-		require => Exec['get updates'],
+		require => Exec['stop jenkins'],
 		command => "sudo sed -i 's/8080/8083/g' /etc/default/jenkins"
 	}
 		exec{'restart jenkins':
