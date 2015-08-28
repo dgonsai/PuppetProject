@@ -32,11 +32,17 @@ SCRIPT
 
 Vagrant.configure(2) do |o|
   o.vm.box = "ubuntu/trusty64"
-
+  
+  o.vm.provider "o" do |v|
+		v.gui = true
+	    v.memory = 3072
+		v.cpus = 2
+  end
+  
   o.vm.define "master" do |master|
+	master.vm.provision "shell", inline: $MasterScript
     master.vm.network "public_network", ip: "10.50.15.184"
     master.vm.hostname = "Master"
-	master.vm.provision "shell", inline: $MasterScript
   end  
   
   
