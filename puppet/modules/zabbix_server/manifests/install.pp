@@ -11,14 +11,14 @@ class zabbix_server::install{
 	    path => ['/usr/bin', 'bin', 'usr/sbin'], provider => 'shell'
 	}
 
-	exec{'Update':
-	    command => "sudo apt-get -y update",
-		require => Exec['Update Hosts']
-	}
+#	exec{'Update':
+#	    command => "sudo apt-get -y update",
+#		require => Exec['Update Hosts']
+#	}
 
 	exec{'Install Server':
 		command => "sudo DEBIAN_FRONTEND=noninteractive aptitude install -y zabbix-server-mysql",
-		require => Exec['Update']
+		require => Exec['Update Hosts']
 	}
 	
 	exec{'Install':
