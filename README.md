@@ -9,6 +9,7 @@ Steps to replicate:
 - Change url's in install.pp files to match the current server (currently 10.50.20.28:8080/aaron)
 - Navigate to the new directory (with the vagrantfile) right-click and 'Git Bash'
 - Type "vagrant up" and press 'enter'
+- Vagrant ssh in, check -version for java, mvn, jira (--version for git)
 
 DockerHub repository - "docker pull tw1l1ghtsp4rkl3/puppettoolset"
 
