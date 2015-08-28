@@ -6,7 +6,7 @@ class java::install{
 
     exec{'Download Java':
         cwd => '/opt',
-		command => "wget http://10.50.20.21:8080/aaron/downloads/jdk-8u45-linux-x64.tar.gz",
+		command => "wget http://10.50.20.28:8080/aaron/downloads/jdk-8u45-linux-x64.tar.gz",
 		timeout => 0
     }
 	

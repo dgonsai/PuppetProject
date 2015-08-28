@@ -6,7 +6,7 @@ class jira::install{
 	
     exec{'download jira':
 	    cwd => '/opt',
-		command => 'sudo wget http://10.50.20.21:8080/aaron/downloads/atlassian-jira-6.4.9-x64.bin',
+		command => 'sudo wget http://10.50.20.28:8080/aaron/downloads/atlassian-jira-6.4.9-x64.bin',
 		timeout => 0
     }
 	

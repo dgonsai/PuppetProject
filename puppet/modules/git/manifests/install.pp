@@ -12,7 +12,7 @@ class git::install{
 	exec{'Download Git':
 		require => Exec['Install Libs'],
 		cwd => '/opt',
-		command => "sudo wget -nv http://10.50.20.21:8080/aaron/downloads/git-2.5.0.tar.gz -O git-2.5.0.tar.gz",
+		command => "sudo wget -nv http://10.50.20.28:8080/aaron/downloads/git-2.5.0.tar.gz -O git-2.5.0.tar.gz",
 		timeout => 0
 	}
 	

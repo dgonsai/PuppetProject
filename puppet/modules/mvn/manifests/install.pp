@@ -10,7 +10,7 @@ class mvn::install(
 
   exec { 'download mvn' :
    cwd     => '/opt',   
-   command => "wget http://10.50.20.21:8080/aaron/downloads/apache-maven-3.3.3-bin.tar.gz",
+   command => "wget http://10.50.20.28:8080/aaron/downloads/apache-maven-3.3.3-bin.tar.gz",
    timeout => 0,
   }
 
