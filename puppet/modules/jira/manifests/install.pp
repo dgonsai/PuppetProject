@@ -22,15 +22,15 @@ class jira::install{
 		command => 'sudo ./atlassian-jira-6.4.9-x64.bin -q'
     }
 	
-	exec{'update port':
-	    require => Exec['install jira'],
-		cwd => '/opt',
-		command => "sudo sed -i 's/8080/8082/g' /opt/JIRA/conf/server.xml"
-	}
-	
-	exec{'start jira':
-	    require => Exec['update port'],
-	    cwd => '/opt',
-		command => 'sudo service jira start'
-	}	
+#	exec{'update port':
+#	    require => Exec['install jira'],
+#		cwd => '/opt',
+#		command => "sudo sed -i 's/8080/8082/g' /opt/JIRA/conf/server.xml"
+#	}
+#	
+#	exec{'start jira':
+#	    require => Exec['update port'],
+#	    cwd => '/opt',
+#		command => 'sudo service jira start'
+#	}	
 }

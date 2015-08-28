@@ -34,4 +34,22 @@ class jenkins::install{
 		command => 'sudo apt-get -y install jenkins',
 		logoutput => on_failure
 	}	
+	
+	exec{'get updates':
+	    cwd => '/opt',
+		require => Exec['install jenkins'],
+		command => 'sudo service jenkins stop'
+	}
+	
+	exec{'change port':
+	    cwd => '/opt',
+		require => Exec['get updates'],
+		command => "sudo sed -i 's/8080/8083/g' /etc/default/jenkins"
+	}
+		exec{'restart jenkins':
+	    cwd => '/opt',
+		require => Exec['change port'],
+		command => 'sudo service jenkins start'
+	}
+	
 }
