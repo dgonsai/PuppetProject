@@ -1,5 +1,8 @@
 node 'Master.netbuilder.private'{
-	include zabbix_server
+	#include zabbix_server
+	include java
+	include mvn
+	include git
 
 }
 node 'Agent.netbuilder.private'{
@@ -9,7 +12,7 @@ node 'Agent.netbuilder.private'{
 	#include git
 	#include jira
 	#include mcollective
-	include zabbix_client
+	#include zabbix_client
 	
 	#class {'::mcollective':
 		#client => true,
